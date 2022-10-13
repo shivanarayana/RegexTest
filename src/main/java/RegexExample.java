@@ -24,35 +24,19 @@ public class RegexExample {
         }
 
         RegexExample regexExample = new RegexExample();
-        regexExample.padLeftSpaces("left", 10);
-        regexExample.padLeftZeros("left", 10);
+        StringManipulation.padLeftSpaces("left", 10);
+        StringManipulation.padLeftZeros("left", 10);
 
         StringManipulation.StringManipulation("Shiva");
+
+        Heriditary heriditary = new Heriditary();
+        String data=heriditary.printCharacteristics("Modini", "Sr. Software Engg", "Modini", "5.4", 60);
+        System.out.println(data);
+
+        Heriditary father = new FatherGeneration(); // Dynamic Polymorphism
+        String dataFather=father.printCharacteristics("Modini", "Sr. Software Engg", "Modini", "5.4", 60);
+        System.out.println(dataFather); //Runtime Polymorphism
     }
 
-    public String padLeftZeros(String inputString, int length) {
-        if (inputString.length() >= length) {
-            return inputString;
-        }
-        StringBuilder sb = new StringBuilder();
-        while (sb.length() < length - inputString.length()) {
-            sb.append('0');
-        }
-        sb.append(inputString);
-        // System.out.println(sb.toString());
-        return sb.toString();
-    }
 
-    public String padLeftSpaces(String inputString, int length) {
-        if (inputString.length() >= length) {
-            return inputString;
-        }
-        StringBuilder sb = new StringBuilder();
-        while (sb.length() < length - inputString.length()) {
-            sb.append(' ');
-        }
-        sb.append(inputString);
-        // System.out.println(sb.toString());
-        return sb.toString();
-    }
 }

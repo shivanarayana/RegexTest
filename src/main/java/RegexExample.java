@@ -29,13 +29,17 @@ public class RegexExample {
 
         StringManipulation.StringManipulation("Shiva");
 
+        //Dynamic Method Dispatch
         Heriditary heriditary = new Heriditary();
         String data=heriditary.printCharacteristics("Modini", "Sr. Software Engg", "Modini", "5.4", 60);
-        System.out.println(data);
+//        System.out.println(data);
 
         Heriditary father = new FatherGeneration(); // Dynamic Polymorphism
         String dataFather=father.printCharacteristics("Modini", "Sr. Software Engg", "Modini", "5.4", 60);
-        System.out.println(dataFather); //Runtime Polymorphism
+//        System.out.println(dataFather); //Runtime Polymorphism
+
+        StringGame stringGame = new StringGame();
+        stringGame.StartGame();
     }
 
 

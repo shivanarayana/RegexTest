@@ -34,13 +34,17 @@ public class StringGame {
 
         Stream<String> cityStream = Stream.of("Sydney", "Dhaka", "New York", "London");
 
+        cityStream.forEach(n -> {
+            System.out.println(n);
+        });
+
         for (int i = 0; i < 10; i++) {
 
         }
 
-        cityStream.forEach((n) -> {
-            System.out.println(n);
-        });
+//        cityStream.forEach((n) -> {
+//            System.out.println(n);
+//        });
 //    public int getLengthCities() {
 //        return lengthCities;
 //    }

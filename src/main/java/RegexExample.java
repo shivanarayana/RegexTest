@@ -1,8 +1,36 @@
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class RegexExample {
     public static void main(String[] args) {
+
+        String exp = "31/10/2022";
+        Calendar cal = Calendar.getInstance();
+        int day = Integer.parseInt(exp.substring(0,2));
+        int month = Integer.parseInt(exp.substring(3,5));
+        int year = Integer.parseInt(exp.substring(6,10));
+        int calenderYear = cal.get(Calendar.YEAR);
+        int calenderMonth = cal.get(Calendar.MONTH) + 1;
+        int calenderDay = cal.get(Calendar.DATE);
+
+        if(year > calenderYear)
+            System.out.println("Pass");
+
+        if(year == calenderYear)
+        {
+            if(month > calenderMonth){
+                System.out.println("Pass");;
+            }
+            if(month == calenderMonth){
+                if(day > calenderDay){
+                    System.out.println("Pass");;
+                }
+            }
+        }
+
 
         Pattern pattern = Pattern.compile("^Redemption amount \\$ (?!(?:\\d{1,2}|100)$)[0-9]\\d+(\\.\\d{1,2})? is greater than Max Redemption amount \\$ 100.0.$");
 
@@ -40,6 +68,8 @@ public class RegexExample {
 
         StringGame stringGame = new StringGame();
         stringGame.StartGame();
+
+        MapHash.printValues();
     }
 
 
